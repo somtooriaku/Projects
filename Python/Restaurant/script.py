@@ -38,7 +38,7 @@ while len(selected_food_type) == 0:
              "French, African, American, Barbecue, Czech, Thai, Chinese, Mexican, Indian, Cafe, Pizza, " +
              "Italian ]\n")).lower()
 
-    # Search for user_input in food types data structure here
+    #Search for user_input in food types data structure here
     matching_types = []
     type_list_head = my_food_list.get_head_node()
     while type_list_head is not None:
