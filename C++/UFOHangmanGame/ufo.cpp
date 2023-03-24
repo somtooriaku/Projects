@@ -5,8 +5,8 @@ int main() {
 
   greet();
 
-  std::string codeword = "codecademy";
-  std::string answer = "__________";
+  std::string codeword = "Somtochukwu";
+  std::string answer = "___________";
   int misses = 0;
   std::vector<char> incorrect;
   bool guess = false;
