@@ -1,6 +1,6 @@
 from data import *
 from welcome import *
-from linkedlist import LinkedList
+from Linked_list import LinkedList
 
 print_welcome()
 
@@ -34,8 +34,9 @@ selected_food_type = ""
 # Write code for user interaction here
 while len(selected_food_type) == 0:
     user_input = str(input(
-        "\nWhat type of food would you like to eat?\nType the beginning of that food type and press enter to see if "
-        "it's here.\n")).lower()
+        "\nWhat type of food would you like to eat?\n Options include [ German, Japanese, Vegetarian, " +
+             "French, African, American, Barbecue, Czech, Thai, Chinese, Mexican, Indian, Cafe, Pizza, " +
+             "Italian ]\n")).lower()
 
     # Search for user_input in food types data structure here
     matching_types = []
@@ -53,10 +54,10 @@ while len(selected_food_type) == 0:
     if len(matching_types) == 1:
         select_type = str(input(
             "\nThe only matching type for the specified input is " + matching_types[0] + ". \nDo you want to look at " +
-            matching_types[0] + " restaurants? Enter y for yes and n for no\n")).lower()
+            matching_types[0] + " restaurants? Enter yes or no\n")).lower()
 
         # After finding food type write code for retrieving restaurant data here
-        if select_type == 'y':
+        if select_type == 'yes':
             selected_food_type = matching_types[0]
             print("Selected Food Type: " + selected_food_type)
             restaurant_list_head = my_restaurant_list.get_head_node()
@@ -74,6 +75,6 @@ while len(selected_food_type) == 0:
                 restaurant_list_head = restaurant_list_head.get_next_node()
 
             # Ask user if they would like to search for other types of restaurants
-            repeat_loop = str(input("\nDo you want to find other restaurants? Enter y for yes and n for no.\n")).lower()
-            if repeat_loop == 'y':
+            repeat_loop = str(input("\nDo you want to find other restaurants? Enter yes or no.\n")).lower()
+            if repeat_loop == 'yes':
                 selected_food_type = ""
